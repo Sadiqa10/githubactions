@@ -1,0 +1,32 @@
+name: CICD
+on:    
+  push:
+
+jobs:  
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Cloning/Checkout
+        run: echo "cloning code.."
+      
+  build:
+    needs: [code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building Docker image
+        run: echo "executing docker build command"
+    
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Performing testing
+        run: echo "Test Conduction in progress"
+  deploy:
+    needs:
+      - build
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying on the machine
+        run: echo "Deploying the code"
