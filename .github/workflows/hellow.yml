@@ -7,6 +7,13 @@ on:
 # Jobs ell what the workflow should do, there can be one or more than one job
 jobs:
   # Mention Job Name 
+  say-Bye:
+    #Creates a Ephermel container with ubuntu running in it, It's role is to run job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Bye to everyone
+        run: echo "bye World my workflow is completed"
+        
   say-hello:
     #Creates a Ephermel container with ubuntu running in it, It's role is to run job
     runs-on: ubuntu-latest
@@ -14,9 +21,4 @@ jobs:
       - name: Say hello to everyone
         run: echo "hello World"
         
-  say-Bye:
-    #Creates a Ephermel container with ubuntu running in it, It's role is to run job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Say Bye to everyone
-        run: echo "bye World my workflow is comolted"
+  
