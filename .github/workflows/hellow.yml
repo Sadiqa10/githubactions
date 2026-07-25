@@ -13,3 +13,10 @@ jobs:
     steps:
       - name: Say hello to everyone
         run: echo "hello World"
+        
+  say-Bye:
+    #Creates a Ephermel container with ubuntu running in it, It's role is to run job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Bye to everyone
+        run: echo "bye World my workflow is comolted"
