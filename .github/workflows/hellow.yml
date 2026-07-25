@@ -8,6 +8,7 @@ on:
 jobs:
   # Mention Job Name 
   say-Bye:
+    needs: say-hello
     #Creates a Ephermel container with ubuntu running in it, It's role is to run job
     runs-on: ubuntu-latest
     steps:
